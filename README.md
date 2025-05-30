@@ -174,10 +174,10 @@ Options
 -h	help
 -l	list objects
 -m	list available models
--a <obj> <type> <x> <y> <z> <yaw> <pitch> <roll>|<filename>	add an object or all objects in config file
--d <obj>|<filename>|all	   delete one object, all objects in config file, or all objects in the scene
+-a	<obj> <type> <x> <y> <z> <yaw> <pitch> <roll>|<filename>	add an object or all objects in config file
+-d	<obj>|<filename>|all	   delete one object, all objects in config file, or all objects in the scene
 -w	world properties
--s <obj>	object properties and state
+-s	<obj>	object properties and state
 ```
 
 # Rviz visualization
