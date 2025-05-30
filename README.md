@@ -1,6 +1,6 @@
 # ARM Gazebo
 
-This package contains files for Gazebo simulation for RoboCup ARM challenge.
+This package contains the Gazebo simulation used in the [RoboCup ARM challenge](https://arm.robocup.org/).
 
 # Setup
 
@@ -52,17 +52,24 @@ This package contains files for Gazebo simulation for RoboCup ARM challenge.
     ```
 
 
-# Build
+# Build or pull the docker image
 
 > [!NOTE]
 > Skip this section if you downloaded the ARM Gazebo Virtual Machine.
 
-Build docker image
+To get the docker image you can either build it from the `Dockerfile` or pull it from `dockerhub'. 
+
+Option 1: Build docker image
 
 ```bash	
 cd docker
 ./build.bash
 ```
+
+Option 2: Pull image
+
+    docker pull iocchi/arm_gazebo:latest
+
 
 # Run
 
@@ -106,7 +113,7 @@ In this script you can find the commands sent to the tmux server, in particular 
 > [!NOTE]
 > You can create additional tmux windows with <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>c</kbd>. You can detach from tmux with <kbd>Ctrl</kbd>+<kbd>b</kbd> <kbd>d</kbd>
 
-
+If you need to restart the simulation, move to the first window of tmus (the one running gazebo), quit the simulation and other ROS nodes with 'CTRL-c' in this window, relaunch the simulator and all the ROS nodes (press the UP key to access the previous command and then ENTER).
 
 
 
@@ -121,7 +128,7 @@ Create a config file in `config` folder with objects described in this format
 
 Spawn objects from the docker container
 
-First enter the docker container
+First, enter the docker container
 
 ```bash
 docker exec -it armgazebo tmux a
@@ -168,7 +175,7 @@ Options
 -l	list objects
 -m	list available models
 -a <obj> <type> <x> <y> <z> <yaw> <pitch> <roll>|<filename>	add an object or all objects in config file
--d <obj>|<filename>	delete one object or all objects in config file
+-d <obj>|<filename>|all	   delete one object, all objects in config file, or all objects in the scene
 -w	world properties
 -s <obj>	object properties and state
 ```
