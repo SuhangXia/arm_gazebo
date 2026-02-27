@@ -1,0 +1,8 @@
+<launch>
+  <!-- 加载 3D 传感器配置（点云 → Octomap） -->
+  <rosparam command="load" file="$(find arm_gazebo)/config/sensors_3d.yaml" />
+
+  <!-- Octomap 参数 -->
+  <param name="octomap_resolution" type="double" value="0.01" />
+  <param name="max_range" type="double" value="2.5" />
+</launch>
