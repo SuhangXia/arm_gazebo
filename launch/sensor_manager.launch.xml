@@ -1,4 +1,6 @@
 <launch>
+  <arg name="moveit_sensor_manager" default="ur5e" />
+
   <!-- 加载 3D 传感器配置（点云 → Octomap） -->
   <rosparam command="load" file="$(find arm_gazebo)/config/sensors_3d.yaml" />
 
